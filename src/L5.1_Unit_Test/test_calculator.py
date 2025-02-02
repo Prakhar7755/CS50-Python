@@ -1,21 +1,22 @@
 import pytest
 from calculator import square
 
-# 2 failed, 1 passed for n+n
 
 def test_positive():
     assert square(2) == 4
     assert square(3) == 9
 
 
+def test_zero():
+    assert square(0.3) == 0.09
+
+
 def test_negative():
     assert square(-2) == 4
-    assert square(-3) == 9
-
-
-def test_zero():
-    assert square(0) == 0
+    assert square(-4) == 16
 
 def test_str():
     with pytest.raises(TypeError):
         square("cat")
+
+
